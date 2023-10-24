@@ -1,0 +1,43 @@
+<div class="main-container d-flex">
+    <div class="sidebar" id="side_nav" [class.active]="isSidebarActive">
+        <div class="header-box px-2 pt-3 pb-4 d-flex justify-content-between">
+            <h1 class="fs-4">
+                <span class="bg-white text-dark rounded shadow px-2 me-2">ME</span>
+                <span class="text-white">Code Savvy</span>
+            </h1>
+            <button class="btn d-md-none d-block close-btn px-1 py-0 text-white" (click)="onCloseSidebar()">
+                <i class="fas fa-stream"></i>
+            </button>
+        </div>
+        <ul class="list-unstyled px-2" (click)="onMenuClick($event)">
+            <li data-menu="dashboard" [ngClass]="{ 'active': activeMenu === 'dashboard' }">
+                <a [routerLink]="['/dashboard']"  class="text-decoration-none px-3 py-2 d-block">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+            </li>
+            <li data-menu="project" [ngClass]="{ 'active': activeMenu === 'project' }"><a [routerLink]="['/projects']"
+                    class="text-decoration-none  px-3 py-2 d-block"><i class="fas fa-list"></i> Project</a></li>
+            <li data-menu="message" [ngClass]="{'active' : activeMenu === 'message'}"><a [routerLink]="['/message']"
+                    class="text-decoration-none  px-3 py-2 d-block d-flex justify-content-between">
+                    <span><i class="fas fa-comment"></i> Message</span>
+                    <span class="bg-dark rounded-pill text-white py-0 px-2">02</span>
+                </a>
+            </li>
+            <li data-menu="service" [ngClass]="{ 'active': activeMenu === 'service' }"><a [routerLink]="['/service']"
+                    class="text-decoration-none px-3 py-2 d-block"><i class="fas fa-envelope-open-text"></i> Service</a>
+            </li>
+            <li data-menu="users" [ngClass]="{ 'active': activeMenu === 'users' }"><a [routerLink]="['/users']"
+                    class="text-decoration-none px-3 py-2 d-block"><i class="fas fa-users"></i> Users</a></li>
+        </ul>
+
+        <hr class="h-color mx-2">
+
+        <ul class="list-unstyled px-2" (click)="onMenuClick($event)">
+            <li data-menu="settings" [ngClass]="{ 'active': activeMenu === 'settings' }"><a [routerLink]="['/settings']"
+                    class="text-decoration-none  px-3 py-2 d-block"><i class="fas fa-bars"></i> Settings</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <app-header (showSideBarEvent)="evSidebarToggled($event)" [showSideBar]="isSidebarActive"></app-header>
+    </div>
+</div>
