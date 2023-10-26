@@ -9,6 +9,7 @@ import { MessageModule } from './message/message.module';
 import { ServiceModule } from './service/service.module';
 import { SettingsModule } from './settings/settings.module';
 import { UsersModule } from './users/users.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { UsersModule } from './users/users.module';
     ServiceModule,
     SettingsModule,
     UsersModule,
-    DashboardModule
+    DashboardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
